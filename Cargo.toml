@@ -1,0 +1,6 @@
+[package]
+name = "rust_rpn"
+version = "0.1.0"
+authors = ["dieg0 <dieg0card0s0@hotmail.com>"]
+
+[dependencies]
