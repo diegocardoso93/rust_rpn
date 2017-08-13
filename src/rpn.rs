@@ -1,10 +1,9 @@
 
 pub fn rpn_to_infix_equation(expr: &str) -> String {
-    let tokens_collection = expr.split_whitespace();
-    let tokens: Vec<&str> = tokens_collection.collect();
-    let mut n2;
-    let mut n1;
-    let mut stack = vec!["".to_string()];
+    let tokens: Vec<&str> = expr.split_whitespace().collect();
+    let mut n2: String;
+    let mut n1: String;
+    let mut stack: Vec<String> = vec!["".to_string()];
     for token in tokens {
         if ["+", "-", "*", "/", "^"].contains(&token) {
             n2 = stack.pop().unwrap().to_string();
