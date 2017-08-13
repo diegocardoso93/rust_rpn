@@ -6,10 +6,10 @@ pub fn rpn_to_infix_equation(expr: &str) -> String {
     let mut n1;
     let mut stack = vec!["".to_string()];
     for token in tokens {
-        if ["+", "-", "*", "/"].contains(&token) {
-            n1 = stack.pop().unwrap().to_string();
+        if ["+", "-", "*", "/", "^"].contains(&token) {
             n2 = stack.pop().unwrap().to_string();
-            let formatted_equation = &format!("({}{}{})", n1, token, n2);
+            n1 = stack.pop().unwrap().to_string();
+            let formatted_equation = &format!("({} {} {})", n1, token, n2);
             stack.push(formatted_equation.to_owned() );
         } else {
             stack.push(token.to_string());
